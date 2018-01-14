@@ -56,6 +56,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         progressDialog.show();
 
+        // HTTP 통신을 통해 로그인을 함
+        // 안드로이드 입장에서는 데이터를 저장하든 불러오든, 데이터를 전송하고 응답 받는다는 것에서는 같음
+        // 다만 어느 php에게 데이터를 전송하였느냐에 따라 의미가 달라짐
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
                 Constants.URL_LOGIN,
@@ -64,7 +67,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     public void onResponse(String response) {
                         progressDialog.dismiss();
                         try {
-                            JSONObject obj = new JSONObject(response);
+                            JSONObject obj = new JSONObject(response);      // 데이터를 받음
                             if(!obj.getBoolean("error")){
                                 SharedPrefManager.getInstance(getApplicationContext())
                                         .userLogin(
@@ -100,7 +103,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }
         ){
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
+            protected Map<String, String> getParams() throws AuthFailureError {     // 보낼 데이터 생성
                 Map<String, String> params = new HashMap<>();
                 params.put("username", username);
                 params.put("password", password);

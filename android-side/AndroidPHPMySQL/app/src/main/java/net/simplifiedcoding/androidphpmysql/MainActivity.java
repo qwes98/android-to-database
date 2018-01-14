@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         progressDialog.setMessage("Registering user...");
         progressDialog.show();
 
+        // HTTP 통신을 통해 보낼 데이터를 지정(getParams)를 지정하고 결과 메시지를 Listener를 통해 받음
         StringRequest stringRequest = new StringRequest(Request.Method.POST,
                 Constants.URL_REGISTER,
                 new Response.Listener<String>() {
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         progressDialog.dismiss();
 
                         try {
-                            JSONObject jsonObject = new JSONObject(response);
+                            JSONObject jsonObject = new JSONObject(response);   // 데이터를 받음
 
                             Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_LONG).show();
 
@@ -91,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }) {
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
+            protected Map<String, String> getParams() throws AuthFailureError {     // 보낼 데이터 생성
                 Map<String, String> params = new HashMap<>();
                 params.put("username", username);
                 params.put("email", email);
