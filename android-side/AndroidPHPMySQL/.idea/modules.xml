@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidPHPMySQL.iml" filepath="$PROJECT_DIR$/AndroidPHPMySQL.iml" />
+      <module fileurl="file://C:\Users\jiwon\Desktop\android-to-database\android-side\AndroidPHPMySQL\AndroidPHPMySQL.iml" filepath="C:\Users\jiwon\Desktop\android-to-database\android-side\AndroidPHPMySQL\AndroidPHPMySQL.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\jiwon\Desktop\android-to-database\android-side\AndroidPHPMySQL\app\app.iml" filepath="C:\Users\jiwon\Desktop\android-to-database\android-side\AndroidPHPMySQL\app\app.iml" />
     </modules>
   </component>
 </project>
